@@ -14,7 +14,6 @@ import './App.css';
 // Add sprites and pokedex number into autocomplete and improve styling.
 // Add custom row ordering for data grid.
 export const App = (): React.JSX.Element => {
-	console.log('hello');
 	const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
 	const [snackbarMessage, setSnackbarMessage] = useState<string>('');
 	const [snackbarColor, setSnackbarColor] = useState<'success' | 'info' | 'warning' | 'error'>('success');
