@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from '@mui/material';
+import { CustomTooltip } from 'components/custom/CustomTooltip';
 import { useFetchSprite } from 'pokemon-directory/api/useFetchSprite';
-import { CustomTooltip } from 'pokemon-directory/components/custom/CustomTooltip';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
 import { useUpdatePokemon, type updatePokemonProps } from 'pokemon-directory/helper/useUpdatePokemon';
 import React, { useContext } from 'react';

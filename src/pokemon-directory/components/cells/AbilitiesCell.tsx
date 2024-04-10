@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { CustomTooltip } from 'pokemon-directory/components/custom/CustomTooltip';
+import { CustomTooltip } from 'components/custom/CustomTooltip';
 import { formatAbilityName } from 'pokemon-directory/helper/helper';
 import type { Ability } from 'pokemon-directory/models/models';
 import React from 'react';

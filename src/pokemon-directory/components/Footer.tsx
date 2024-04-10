@@ -1,8 +1,8 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Box, Link as MuiLink, Paper, Typography } from '@mui/material';
+import { CustomTooltip } from 'components/custom/CustomTooltip';
 import { useFetchSprite } from 'pokemon-directory/api/useFetchSprite';
 import pokeApiLogo from 'pokemon-directory/assets/pokeapi-logo.svg';
-import { CustomTooltip } from 'pokemon-directory/components/custom/CustomTooltip';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
 import { useUpdatePokemon, type updatePokemonProps } from 'pokemon-directory/helper/useUpdatePokemon';
 import React, { useContext } from 'react';

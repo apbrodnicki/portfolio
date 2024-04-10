@@ -1,6 +1,6 @@
 import RemoveCircleTwoToneIcon from '@mui/icons-material/RemoveCircleTwoTone';
 import { Box } from '@mui/material';
-import { CustomTooltip } from 'pokemon-directory/components/custom/CustomTooltip';
+import { CustomTooltip } from 'components/custom/CustomTooltip';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
 import { SnackbarContext } from 'pokemon-directory/contexts/SnackbarContext';
 import React, { useContext } from 'react';
