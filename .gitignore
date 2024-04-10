@@ -3,6 +3,7 @@
 
 # production
 /dist
+tsconfig.tsbuildinfo
 
 # misc
 /.vscode

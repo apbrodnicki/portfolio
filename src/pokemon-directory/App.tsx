@@ -29,7 +29,7 @@ export const App = (): React.JSX.Element => {
 	}, [pokemonList]);
 
 	return (
-		<>
+		<Box id="pokemon-directory">
 			<SnackbarContext.Provider value={{ snackbarOpen, setSnackbarOpen, snackbarMessage, setSnackbarMessage, snackbarColor, setSnackbarColor }}>
 				<PokemonListContext.Provider value={{ pokemonList, setPokemonList }}>
 					<Header />
@@ -64,6 +64,6 @@ export const App = (): React.JSX.Element => {
 					<Footer />
 				</PokemonListContext.Provider>
 			</SnackbarContext.Provider>
-		</>
+		</Box>
 	);
 };
