@@ -1,9 +1,9 @@
-import { App } from 'components/App';
+import { App } from 'App';
 import { ErrorPage } from 'components/ErrorPage';
+import { App as PokemonDirectoryApp } from 'pokemon-directory/App';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
 
 const router = createHashRouter([
 	{
@@ -12,15 +12,15 @@ const router = createHashRouter([
 		errorElement: <ErrorPage />,
 		children: [
 			{
-				path: 'pokemon-directory',
-				element: <>pokemon-directory</>
+				path: '/pokemon-directory',
+				element: <PokemonDirectoryApp />
 			},
 			{
-				path: 'lexicon',
+				path: '/lexicon',
 				element: <>lexicon</>
 			},
 			{
-				path: 'movies-and-shows-archive',
+				path: '/movies-and-shows-archive',
 				element: <>movies-and-shows-archive</>
 			}
 		]

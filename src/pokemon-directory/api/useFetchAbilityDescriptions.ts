@@ -1,0 +1,35 @@
+import { getAbilityDescription } from 'pokemon-directory/helper/filterApiData';
+import { type Ability } from 'pokemon-directory/models/models';
+import type React from 'react';
+import { useEffect, useState } from 'react';
+import { fetchAbility } from './fetchAbility';
+
+interface useFetchAbilityDescriptionsProps {
+	abilities: string[],
+	setIsLoadingAbilityDescriptions: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const useFetchAbilityDescriptions = (
+	{ abilities, setIsLoadingAbilityDescriptions }: useFetchAbilityDescriptionsProps
+): Ability[] => {
+	const [descriptions, setDescriptions] = useState<Ability[]>([]);
+
+	useEffect(() => {
+		const fetchData = async (): Promise<void> => {
+			try {
+				const promises = abilities.map(async (ability: string) => await fetchAbility(ability));
+				const abilityData = await Promise.all(promises);
+				const abilityDescriptions = abilityData.map(getAbilityDescription);
+				setDescriptions(abilityDescriptions);
+			} catch (error) {
+				console.log('Error fetching ability descriptions ->', error);
+			} finally {
+				setIsLoadingAbilityDescriptions(false);
+			}
+		};
+
+		void fetchData();
+	}, [abilities.join(',')]);
+
+	return descriptions;
+};
