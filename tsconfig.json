@@ -19,8 +19,6 @@
 		"noEmit": true,
 		"noFallthroughCasesInSwitch": true,
 		"noImplicitAny": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
 		"removeComments": false,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
