@@ -1,13 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" id="favicon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Alex Brodnicki's Portfolio" />
+		<title>Portfolio</title>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/src/index.tsx"></script>
+		<script>
+			// Update favicon based on route
+			const favicon = document.getElementById('favicon');
+
+			switch (window.location.pathname) {
+				case '/pokemon-directory':
+					favicon.href = '/pokeball-icon.svg';
+					break;
+				case '/lexicon':
+					favicon.href = '/dictionary-icon.svg';
+					break;
+				case '/movies-and-shows-archive':
+					favicon.href = '/vite.png';
+					break;
+			}
+		</script>
+	</body>
 </html>
