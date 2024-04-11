@@ -1,6 +1,7 @@
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import React from 'react';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import { Header } from './Header';
 
 export const ErrorPage = (): React.JSX.Element => {
 	const error = useRouteError();
@@ -19,22 +20,19 @@ export const ErrorPage = (): React.JSX.Element => {
 
 	return (
 		<>
-			<Grid container justifyContent='center'>
-				<Grid item maxWidth='50%'>
-					<Paper
-						elevation={3}
-						sx={{
-							m: 5,
-							backgroundColor: '#B8D8D8'
-						}}>
-						<Box p={5}>
-							<Typography align='center'>
-								{errorMessage}
-							</Typography>
-						</Box>
-					</Paper>
-				</Grid>
-			</Grid>
+			<Header />
+			<Paper
+				elevation={3}
+				sx={{
+					mx: 'auto',
+					my: 10,
+					width: '50%',
+					backgroundColor: '#888888',
+				}}>
+				<Typography p={5} align='center'>
+					{errorMessage}
+				</Typography>
+			</Paper>
 		</>
 	);
 };
