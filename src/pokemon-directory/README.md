@@ -16,5 +16,4 @@ It uses [MUI](https://mui.com/) for the frontend and [gh-pages](https://github.c
 
 The backend data is supplied by [PokéApi](https://pokeapi.co/).
 ___
-
 *Pokémon Directory was created by Alex Brodnicki.*
