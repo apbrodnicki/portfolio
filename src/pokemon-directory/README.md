@@ -5,9 +5,9 @@ The user can add or remove any existing Pokémon they want and will have their d
 
 It is hosted using Github Pages, you may view the website [here](https://apbrodnicki.com/#/pokemon-directory).
 
-![Home Page](src/assets/empty-page.png)
+![Home Page](assets/empty-page.png)
 
-![Pokémon Grid](src/assets/data-grid.png)
+![Pokémon Grid](assets/data-grid.png)
 
 ## Packages
 The project is built in React/Typescript.
