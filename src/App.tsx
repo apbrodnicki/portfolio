@@ -20,10 +20,10 @@ export const App = (): React.JSX.Element => {
 				favicon.href = '/dictionary-icon.svg';
 				title.text = 'Lexicon';
 			} else if (pathname.includes('movies-and-shows-archive')) {
-				favicon.href = '/vite.png';
+				favicon.href = '/popcorn-icon.svg';
 				title.text = 'Movies and Shows Archive';
 			} else {
-				favicon.href = '/vite.svg';
+				favicon.href = '/code-icon.svg';
 				title.text = 'Portfolio';
 			}
 		};
