@@ -13,6 +13,26 @@ export const formatAbilityName = (name: string): string => {
 	return updatedNameArray.join(' ');
 };
 
+export const formatPokemonName = (name: string): string => {
+	let updatedName: string = '';
+
+	if (name.includes('-')) {
+		const split = name.split('-');
+
+		for (const word of split) {
+			updatedName += capitalizeFirstLetter(word) + ' ';
+		}
+
+		if (updatedName.includes('Mega')) {
+			updatedName = 'Mega ' + updatedName.replace('Mega', '');
+		}
+	} else {
+		updatedName = capitalizeFirstLetter(name);
+	}
+
+	return updatedName;
+};
+
 /**
  * Capitalizes the first letter in a string, parasect -> Parasect
  * @param {string} word

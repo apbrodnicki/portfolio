@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter } from 'pokemon-directory/helper/helper';
+import { formatPokemonName } from 'pokemon-directory/helper/helper';
 import type { GenericAbility, GenericAllPokemon, GenericDamageRelation, GenericPokemon, GenericType } from 'pokemon-directory/models/genericModels';
 import type { Ability, DamageRelation, Pokemon, Stats, Type } from 'pokemon-directory/models/models';
 
@@ -7,7 +7,6 @@ export const getSprite = (pokemon: GenericPokemon): string => {
 };
 
 export const filterPokemonData = (pokemon: GenericPokemon): Pokemon => {
-	let name: string = '';
 	const types: string[] = [];
 	const abilities: string[] = [];
 	const stats = {
@@ -19,19 +18,7 @@ export const filterPokemonData = (pokemon: GenericPokemon): Pokemon => {
 		speed: 0,
 	};
 
-	if (pokemon.name.includes('-')) {
-		const split = pokemon.name.split('-');
-
-		for (const word of split) {
-			name += capitalizeFirstLetter(word) + ' ';
-		}
-
-		if (name.includes('Mega')) {
-			name = 'Mega ' + name.replace('Mega', '');
-		}
-	} else {
-		name = capitalizeFirstLetter(pokemon.name);
-	}
+	const name = formatPokemonName(pokemon.name);
 
 	for (const type of pokemon.types) {
 		types.push(type.type.name);
