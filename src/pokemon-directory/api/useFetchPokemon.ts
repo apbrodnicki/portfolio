@@ -29,7 +29,7 @@ export const useFetchPokemon = (
 		};
 
 		void fetchData();
-	}, [pokemonList]);
+	}, [pokemonList, setIsLoadingPokemon]);
 
 	return pokemon;
 };

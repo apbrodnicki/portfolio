@@ -13,7 +13,7 @@ export const Projects = (): React.JSX.Element => {
 	`;
 
 	return (
-		<Paper elevation={3} sx={{ m: 5, backgroundColor: '#666666' }}>
+		<Paper elevation={3} sx={{ m: 5, backgroundColor: '#888888' }}>
 			<Typography variant='h5' px={5} py={3}>
 				Projects
 			</Typography>

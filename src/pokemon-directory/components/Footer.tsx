@@ -4,21 +4,21 @@ import { CustomTooltip } from 'components/custom/CustomTooltip';
 import { useFetchSprite } from 'pokemon-directory/api/useFetchSprite';
 import pokeApiLogo from 'pokemon-directory/assets/pokeapi-logo.svg';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
-import { useUpdatePokemon, type updatePokemonProps } from 'pokemon-directory/helper/useUpdatePokemon';
+import { useUpdatePokemonList, type updatePokemonListProps } from 'pokemon-directory/hooks/useUpdatePokemonList';
 import React, { useContext } from 'react';
 
 export const Footer = (): React.JSX.Element => {
 	const { pokemonList } = useContext(PokemonListContext);
 
-	const updatePokemon = useUpdatePokemon();
+	const updatePokemonList = useUpdatePokemonList();
 
 	const onClick = (name: string): void => {
-		let action: updatePokemonProps['action'] = 'add';
+		let action: updatePokemonListProps['action'] = 'add';
 		if (pokemonList.includes(name)) {
 			action = 'remove';
 		}
 
-		updatePokemon({ action, pokemonInput: [name], setPokemonInput: () => {} });
+		updatePokemonList({ action, pokemonInput: [name], setPokemonInput: () => {} });
 	};
 
 	return (

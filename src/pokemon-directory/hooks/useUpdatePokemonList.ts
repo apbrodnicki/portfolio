@@ -3,18 +3,18 @@ import { SnackbarContext } from 'pokemon-directory/contexts/SnackbarContext';
 import type React from 'react';
 import { useContext } from 'react';
 
-export interface updatePokemonProps {
+export interface updatePokemonListProps {
 	action: 'add' | 'remove',
 	pokemonInput: string[],
 	setPokemonInput: React.Dispatch<React.SetStateAction<string[]>>
 }
 
-export const useUpdatePokemon = (): ({ action, pokemonInput, setPokemonInput }: updatePokemonProps) => void => {
+export const useUpdatePokemonList = (): ({ action, pokemonInput, setPokemonInput }: updatePokemonListProps) => void => {
 	const { setSnackbarOpen, setSnackbarMessage, setSnackbarColor } = useContext(SnackbarContext);
 	const { pokemonList, setPokemonList } = useContext(PokemonListContext);
 
-	const updatePokemon = (
-		{ action, pokemonInput, setPokemonInput }: updatePokemonProps
+	const updatePokemonList = (
+		{ action, pokemonInput, setPokemonInput }: updatePokemonListProps
 	): void => {
 		if (pokemonInput.length < 1) {
 			setSnackbarMessage('Error: Input value is empty.');
@@ -51,5 +51,5 @@ export const useUpdatePokemon = (): ({ action, pokemonInput, setPokemonInput }: 
 		setPokemonInput([]);
 	};
 
-	return updatePokemon;
+	return updatePokemonList;
 };

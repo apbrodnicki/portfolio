@@ -1,5 +1,5 @@
 import { capitalizeFirstLetter } from 'pokemon-directory/helper/helper';
-import type { GenericAbility, GenericAllPokemonResponse, GenericDamageRelation, GenericPokemon, GenericType } from 'pokemon-directory/models/genericModels';
+import type { GenericAbility, GenericAllPokemon, GenericDamageRelation, GenericPokemon, GenericType } from 'pokemon-directory/models/genericModels';
 import type { Ability, DamageRelation, Pokemon, Stats, Type } from 'pokemon-directory/models/models';
 
 export const getSprite = (pokemon: GenericPokemon): string => {
@@ -112,6 +112,6 @@ export const filterTypeData = (type: GenericType): Type => {
 	};
 };
 
-export const filterAllPokemonData = (allPokemon: GenericAllPokemonResponse): string[] => {
+export const getAllPokemonNames = (allPokemon: GenericAllPokemon): string[] => {
 	return allPokemon.results.map((pokemon) => pokemon.name);
 };

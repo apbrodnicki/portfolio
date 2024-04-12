@@ -9,9 +9,7 @@ import { SnackbarContext } from 'pokemon-directory/contexts/SnackbarContext';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 // TODO:
-// Add custom theme.
 // Add virtualization to autocomplete to improve loading.
-// Add sprites and pokedex number into autocomplete and improve styling.
 // Add custom row ordering for data grid.
 export const App = (): React.JSX.Element => {
 	const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
