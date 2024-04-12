@@ -1,8 +1,11 @@
 import { getSprite } from 'pokemon-directory/helper/filterApiData';
 import { useEffect, useState } from 'react';
 import { fetchPokemon } from './fetchPokemon';
+interface useFetchAllSpritesProps {
+	names: string[]
+}
 
-export const useFetchAllSprites = (names: string[]): string[] => {
+export const useFetchAllSprites = ({ names }: useFetchAllSpritesProps): string[] => {
 	const [sprites, setSprites] = useState<string[]>([]);
 
 	useEffect(() => {

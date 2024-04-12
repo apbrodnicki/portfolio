@@ -14,13 +14,13 @@ export const UpdatePokemon = (): React.JSX.Element => {
 	const [pokemonInput, setPokemonInput] = useState<string[]>([]);
 	const [autocompleteKey, setAutocompleteKey] = useState<string>('');
 
-	const allPokemonNames = useFetchAllPokemonNames();
-	const allSprites = useFetchAllSprites(allPokemonNames);
+	const names = useFetchAllPokemonNames();
+	const sprites = useFetchAllSprites({ names });
 	// Add safety to only do names if sprites fail
-	const autocompleteOptions: PokemonAutocompleteItem[] = allPokemonNames.map((name, index) => ({
+	const autocompleteOptions: PokemonAutocompleteItem[] = names.map((name, index) => ({
 		pokedexNumber: index + 1,
 		name,
-		sprite: allSprites[index]
+		sprite: sprites[index]
 	}));
 
 	const onAutocompleteChange = (value: string[] | PokemonAutocompleteItem[]): void => {
