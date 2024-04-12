@@ -9,6 +9,10 @@ It is hosted using Github Pages, you may view the website [here](https://apbrodn
 
 ![Pokémon Grid](assets/data-grid.png)
 
+![Add Dropdown](assets/add-dropdown.png)
+
+![Remove Dropdown](assets/remove-dropdown.png)
+
 ## Packages
 The project is built in React/Typescript.
 
