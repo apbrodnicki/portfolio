@@ -1,9 +1,13 @@
 import { formatPokemonName } from 'pokemon-directory/helper/helper';
 import type { GenericAbility, GenericAllPokemon, GenericDamageRelation, GenericPokemon, GenericType } from 'pokemon-directory/models/genericModels';
-import type { Ability, DamageRelation, Pokemon, Stats, Type } from 'pokemon-directory/models/models';
+import type { Ability, DamageRelation, Pokemon, PokemonAutocompleteItem, Stats, Type } from 'pokemon-directory/models/models';
 
 export const getSprite = (pokemon: GenericPokemon): string => {
 	return pokemon.sprites.versions['generation-v']['black-white'].animated.front_default ?? pokemon.sprites.front_default; // choose gif over png
+};
+
+export const getPokedexNumber = (pokemon: GenericPokemon): number => {
+	return pokemon.id;
 };
 
 export const filterPokemonData = (pokemon: GenericPokemon): Pokemon => {
@@ -47,6 +51,12 @@ export const filterPokemonData = (pokemon: GenericPokemon): Pokemon => {
 		...convertedStats,
 	};
 };
+
+export const getPokemonAutocompleteItem = (pokemon: GenericPokemon): PokemonAutocompleteItem => ({
+	pokedexNumber: pokemon.id,
+	name: pokemon.name,
+	sprite: getSprite(pokemon)
+});
 
 export const getAbilityDescription = (ability: GenericAbility): Ability => {
 	let description: string = '';
