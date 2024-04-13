@@ -1,5 +1,6 @@
 import { App } from 'App';
 import { ErrorPage } from 'components/ErrorPage';
+import { App as LexiconApp } from 'lexicon/App';
 import { App as PokemonDirectoryApp } from 'pokemon-directory/App';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/lexicon',
-				element: <>lexicon</>
+				element: <LexiconApp />
 			},
 			{
 				path: '/movies-and-shows-archive',

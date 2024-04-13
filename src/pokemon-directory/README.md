@@ -3,7 +3,7 @@ This is an application that showcases data about Pokémon.
 
 The user can add or remove any existing Pokémon they want and will have their data saved in Local Storage.
 
-It is hosted using Cloudflare Pages, you may view the website [here](https://apbrodnicki.com/#/pokemon-directory).
+It is hosted using Cloudflare Pages, you may view the website [here](https://apbrodnicki.com/pokemon-directory).
 
 ![Home Page](assets/empty-page.png)
 
