@@ -9,6 +9,12 @@ body {
 	background-color: #444444;
 }
 
+#home {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 /* #000000 (Black)
 #111111
 #222222
