@@ -7,8 +7,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"predeploy": "echo apbrodnicki.com > dist/CNAME && npm run build",
-		"deploy": "gh-pages -d dist",
+		"lexicon-server": "tsx src/lexicon/server.ts",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
