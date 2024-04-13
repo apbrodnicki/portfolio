@@ -17,6 +17,8 @@ export const Home = (): React.JSX.Element => {
 				mt={3}
 			>
 				<About />
+				{import.meta.env.VITE_EC2_INSTANCE_IP}
+				{import.meta.env.VITE_LEXICON_SERVER_PORT}
 				<Projects />
 			</Box>
 			<Footer />
