@@ -20,7 +20,7 @@ export const About = (): React.JSX.Element => {
 			</Paper>
 			<Box
 				component='img'
-				src='/src/assets/Alexander the Great.jpg'
+				src='/Alexander the Great.jpg'
 				alt='photo'
 				mx={2}
 				width='35%'
