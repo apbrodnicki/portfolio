@@ -3,9 +3,9 @@ import { ErrorPage } from 'components/ErrorPage';
 import { App as PokemonDirectoryApp } from 'pokemon-directory/App';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
