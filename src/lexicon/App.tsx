@@ -12,6 +12,8 @@ export const App = (): React.JSX.Element => {
 
 	return (
 		<>
+			{import.meta.env.VITE_EC2_INSTANCE_IP}
+			{import.meta.env.VITE_LEXICON_SERVER_PORT}
 			{!isLoading && words.length > 0 && (
 				words.map((word: Word, index: number) => (
 					<Box key={index}>
