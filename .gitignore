@@ -8,4 +8,5 @@ tsconfig.tsbuildinfo
 # misc
 /.vscode
 .env
+.env.local
 portfolio-key-pair.pem
