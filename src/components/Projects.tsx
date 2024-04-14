@@ -24,9 +24,15 @@ export const Projects = (): React.JSX.Element => {
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
+					<Typography align='center'>
+							I built Pokémon Directory so that I could access information about Pokémon in a clear manner.
+					</Typography>
+					<Typography align='center'>
+							It was also really important for me to be able to easily compare two or more Pokémon and save my searches.
+					</Typography>
 					<StyledLink to='/pokemon-directory'>
 						<Typography align='center'>
-							Pokémon Directory
+							You can view the project here!
 						</Typography>
 					</StyledLink>
 				</AccordionDetails>
@@ -40,7 +46,10 @@ export const Projects = (): React.JSX.Element => {
 				<AccordionDetails>
 					<StyledLink to='/lexicon'>
 						<Typography align='center'>
-							Lexicon
+							Lexicon was built because I love words.
+						</Typography>
+						<Typography align='center'>
+
 						</Typography>
 					</StyledLink>
 				</AccordionDetails>

@@ -53,5 +53,6 @@ export type Ability = Record<string, string>;
 export interface PokemonAutocompleteItem {
 	pokedexNumber: number,
 	name: string,
-	sprite: string
+	sprite: string,
+	generation: string
 }

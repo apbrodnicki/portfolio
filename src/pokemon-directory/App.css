@@ -5,7 +5,12 @@
 	background-color: #4F6367;
 }
 
+div > .MuiAutocomplete-listbox {
+	padding: 0px
+}
+
 /* theme:
 '#4F6367'
 '#7A9E9F'
-'#B8D8D8' */
+'#B8D8D8'
+'#DDEDED' */

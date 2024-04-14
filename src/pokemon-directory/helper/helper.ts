@@ -79,3 +79,27 @@ export const reduceArray = (abilities: string[][]): string[] => {
 		[]
 	);
 };
+
+export const getGeneration = (pokedexNumber: number): string => {
+	if (pokedexNumber <= 151) {
+		return 'Generation I';
+	} else if (pokedexNumber >= 152 && pokedexNumber <= 251) {
+		return 'Generation II';
+	} else if (pokedexNumber >= 252 && pokedexNumber <= 386) {
+		return 'Generation III';
+	} else if (pokedexNumber >= 387 && pokedexNumber <= 493) {
+		return 'Generation IV';
+	} else if (pokedexNumber >= 494 && pokedexNumber <= 649) {
+		return 'Generation V';
+	} else if (pokedexNumber >= 650 && pokedexNumber <= 721) {
+		return 'Generation VI';
+	} else if (pokedexNumber >= 722 && pokedexNumber <= 809) {
+		return 'Generation VII';
+	} else if (pokedexNumber >= 810 && pokedexNumber <= 905) {
+		return 'Generation VIII';
+	} else if (pokedexNumber >= 906 && pokedexNumber <= 1025) {
+		return 'Generation IX';
+	} else {
+		return 'Other';
+	}
+};

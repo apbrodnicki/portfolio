@@ -1,4 +1,4 @@
-import { formatPokemonName } from 'pokemon-directory/helper/helper';
+import { formatPokemonName, getGeneration } from 'pokemon-directory/helper/helper';
 import type { GenericAbility, GenericAllPokemon, GenericDamageRelation, GenericPokemon, GenericType } from 'pokemon-directory/models/genericModels';
 import type { Ability, DamageRelation, Pokemon, PokemonAutocompleteItem, Stats, Type } from 'pokemon-directory/models/models';
 
@@ -55,7 +55,8 @@ export const filterPokemonData = (pokemon: GenericPokemon): Pokemon => {
 export const getPokemonAutocompleteItem = (pokemon: GenericPokemon): PokemonAutocompleteItem => ({
 	pokedexNumber: pokemon.id,
 	name: pokemon.name,
-	sprite: getSprite(pokemon)
+	sprite: getSprite(pokemon),
+	generation: getGeneration(pokemon.id)
 });
 
 export const getAbilityDescription = (ability: GenericAbility): Ability => {
