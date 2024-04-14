@@ -4,7 +4,7 @@ import React from 'react';
 export const About = (): React.JSX.Element => {
 	return (
 		<Box display='flex'>
-			<Paper elevation={3} sx={{ m: 5, backgroundColor: '#888888', width: '60%' }}>
+			<Paper elevation={3} sx={{ m: 5, backgroundColor: '#888888', width: { sm:'100%', md: '60%' } }}>
 				<Typography variant='h5' px={5} py={3}>
 					About Me
 				</Typography>
@@ -24,6 +24,7 @@ export const About = (): React.JSX.Element => {
 				alt='photo'
 				mx={2}
 				width='35%'
+				display={{ sm: 'none', md: 'block' }}
 			/>
 		</Box>
 	);
