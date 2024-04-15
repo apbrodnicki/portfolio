@@ -13,6 +13,7 @@ export const UpdatePokemon = (): React.JSX.Element => {
 
 	const [pokemonInput, setPokemonInput] = useState<string[]>([]);
 	const [autocompleteKey, setAutocompleteKey] = useState<string>('');
+	const [inputValue, setInputValue] = useState<string>('');
 	const [isLoadingAddAutocompleteItems, setIsLoadingAddAutocompleteItems] = useState<boolean>(true);
 	const [isLoadingRemoveAutocompleteItems, setIsLoadingRemoveAutocompleteItems] = useState<boolean>(true);
 	const isLoading = isLoadingAddAutocompleteItems || isLoadingRemoveAutocompleteItems;
@@ -73,6 +74,14 @@ export const UpdatePokemon = (): React.JSX.Element => {
 								isOptionEqualToValue={(option, value) => (option as PokemonAutocompleteItem).name === (value as PokemonAutocompleteItem).name}
 								getOptionLabel={(option) => (option as PokemonAutocompleteItem).name}
 								onChange={(_, value) => { onAutocompleteChange((value as PokemonAutocompleteItem[])); }}
+								inputValue={inputValue}
+								onInputChange={(event, value, reason) => {
+									if (event !== null && event.type === 'blur') {
+										setInputValue('');
+									} else if (reason !== 'reset') {
+										setInputValue(value);
+									}
+								}}
 								renderOption={(props, option) => (
 									<StyledOptionListItem {...props}>
 										<Typography mr={3}>#{(option as PokemonAutocompleteItem).pokedexNumber}</Typography>
@@ -129,6 +138,14 @@ export const UpdatePokemon = (): React.JSX.Element => {
 								isOptionEqualToValue={(option, value) => option.name === value.name}
 								getOptionLabel={(option) => option.name}
 								onChange={(_, value) => { onAutocompleteChange(value); }}
+								inputValue={inputValue}
+								onInputChange={(event, value, reason) => {
+									if (event !== null && event.type === 'blur') {
+										setInputValue('');
+									} else if (reason !== 'reset') {
+										setInputValue(value);
+									}
+								}}
 								renderOption={(props, option) => (
 									<StyledOptionListItem {...props}>
 										<Typography mr={3}>#{option.pokedexNumber}</Typography>
