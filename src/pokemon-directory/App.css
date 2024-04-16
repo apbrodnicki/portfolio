@@ -6,7 +6,8 @@
 }
 
 div > .MuiAutocomplete-listbox {
-	padding: 0px
+	padding: 0px;
+	max-height: 50vh;
 }
 
 /* theme:

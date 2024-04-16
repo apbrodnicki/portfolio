@@ -56,7 +56,6 @@ export const UpdatePokemon = (): React.JSX.Element => {
 		alignItems: 'flex-start'
 	}));
 
-
 	return (
 		<Grid container justifyContent='center'>
 			{!isLoading && (
@@ -103,7 +102,7 @@ export const UpdatePokemon = (): React.JSX.Element => {
 											label='Add Pokémon'
 											variant='filled'
 										/>
-										<Button onClick={() => {
+										<Button fullWidth onClick={() => {
 											onClick('add');
 											updateAutocompleteKey();
 										}}>
@@ -167,7 +166,7 @@ export const UpdatePokemon = (): React.JSX.Element => {
 											label='Remove Pokémon'
 											variant='filled'
 										/>
-										<Button onClick={() => {
+										<Button fullWidth onClick={() => {
 											onClick('remove');
 											updateAutocompleteKey();
 										}}>
