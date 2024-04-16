@@ -1,14 +1,14 @@
-import { Box, CardMedia, Paper } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 import { DataGrid, type GridColDef } from '@mui/x-data-grid';
 import { useFetchAbilityDescriptions } from 'pokemon-directory/api/useFetchAbilityDescriptions';
 import { useFetchPokemon } from 'pokemon-directory/api/useFetchPokemon';
 import { useFetchTypes } from 'pokemon-directory/api/useFetchTypes';
-import loader from 'pokemon-directory/assets/loader.webm';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
 import { getDataGridColumns } from 'pokemon-directory/helper/getDataGridColumns';
 import { reduceArray } from 'pokemon-directory/helper/helper';
 import { type Pokemon } from 'pokemon-directory/models/models';
 import React, { useContext, useState } from 'react';
+import { Loader } from './Loader';
 
 export const PokemonDataGrid = (): React.JSX.Element => {
 	const { pokemonList } = useContext(PokemonListContext);
@@ -56,17 +56,7 @@ export const PokemonDataGrid = (): React.JSX.Element => {
 					</Box>
 				</Paper>
 			) : (
-				<Box display='flex' justifyContent='center' m={3}>
-					<CardMedia
-						component='video'
-						src={loader}
-						autoPlay
-						loop
-						muted
-						width='800px'
-						height='600px'
-					/>
-				</Box>
+				<Loader />
 			)}
 		</>
 	);

@@ -48,7 +48,7 @@ export const App = (): React.JSX.Element => {
 										}}>
 										<Box p={5}>
 											<Typography align='center'>
-														Add some Pokémon to learn more about them!
+												Add some Pokémon to learn more about them!
 											</Typography>
 										</Box>
 									</Paper>

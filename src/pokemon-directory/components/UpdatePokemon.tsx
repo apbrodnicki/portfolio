@@ -1,7 +1,6 @@
-import { Autocomplete, Box, Button, CardMedia, Grid, List, ListItem, Paper, TextField, Typography, createFilterOptions, styled } from '@mui/material';
+import { Autocomplete, Box, Button, Grid, List, ListItem, Paper, TextField, Typography, createFilterOptions, styled } from '@mui/material';
 import { useFetchAllPokemonNames } from 'pokemon-directory/api/useFetchAllPokemonNames';
 import { useFetchPokemonAutocompleteItems } from 'pokemon-directory/api/useFetchPokemonAutocompleteItems';
-import loader from 'pokemon-directory/assets/loader.webm';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
 import { formatPokemonName } from 'pokemon-directory/helper/helper';
 import { useUpdatePokemonList } from 'pokemon-directory/hooks/useUpdatePokemonList';
@@ -60,7 +59,7 @@ export const UpdatePokemon = (): React.JSX.Element => {
 
 	return (
 		<Grid container justifyContent='center'>
-			{!isLoading ? (
+			{!isLoading && (
 				<>
 					<Grid item xs={12} lg={5} mx={3}>
 						<Paper elevation={3} sx={{ m: 5, backgroundColor: '#B8D8D8' }}>
@@ -192,20 +191,6 @@ export const UpdatePokemon = (): React.JSX.Element => {
 						</Paper>
 					</Grid>
 				</>
-			) : (
-				<Grid item xs={12} mx={3}>
-					<Box display='flex' justifyContent='center' m={3}>
-						<CardMedia
-							component='video'
-							src={loader}
-							autoPlay
-							loop
-							muted
-							width='800px'
-							height='600px'
-						/>
-					</Box>
-				</Grid>
 			)}
 		</Grid>
 	);
