@@ -30,7 +30,7 @@ export const Projects = (): React.JSX.Element => {
 					<Typography align='center'>
 							It was also really important for me to be able to easily compare two or more Pokémon and save my searches.
 					</Typography>
-					<StyledLink to='/pokemon-directory'>
+					<StyledLink to='/pokemon-directory' target='_blank'>
 						<Typography align='center'>
 							You can view the project here!
 						</Typography>
@@ -44,7 +44,7 @@ export const Projects = (): React.JSX.Element => {
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<StyledLink to='/lexicon'>
+					<StyledLink to='/lexicon' target='_blank'>
 						<Typography align='center'>
 							Lexicon was built because I love words.
 						</Typography>
@@ -61,7 +61,7 @@ export const Projects = (): React.JSX.Element => {
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<StyledLink to='/movies-and-shows-archive'>
+					<StyledLink to='/movies-and-shows-archive' target='_blank'>
 						<Typography align='center'>
 							Movies and Shows Archive
 						</Typography>
