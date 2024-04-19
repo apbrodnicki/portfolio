@@ -5,7 +5,6 @@ import fs from 'fs';
 import https from 'https';
 
 const app = express();
-const port = process.env.SERVER_PORT;
 
 // Enable CORS for all routes
 app.use(cors());
@@ -36,6 +35,6 @@ const httpsOptions = {
 };
 
 // Start the HTTPS server
-https.createServer(httpsOptions, app).listen(port, () => {
-	console.log(`Server is running on port ${port}.`);
+https.createServer(httpsOptions, app).listen(443, () => {
+	console.log('Server is running!');
 });
