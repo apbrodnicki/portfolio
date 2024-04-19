@@ -1,9 +1,11 @@
 import cors from 'cors';
 import 'dotenv/config';
 import express, { type Request, type RequestHandler, type Response } from 'express';
+import fs from 'fs';
+import https from 'https';
 
 const app = express();
-const port = process.env.LEXICON_SERVER_PORT;
+const port = process.env.SERVER_PORT;
 
 // Enable CORS for all routes
 app.use(cors());
@@ -23,10 +25,17 @@ app.get('/api/word', (async (request: Request, response: Response) => {
 		response.json(dictionaryApiData);
 	} catch (error) {
 		console.log(error);
+		response.status(500).json({ error: 'Internal server error.' });
 	}
 }) as RequestHandler);
 
-// Start the server
-app.listen(port, () => {
+const httpsOptions = {
+	key: fs.readFileSync(process.env.SERVER_KEY as string),
+	cert: fs.readFileSync(process.env.SERVER_CERT as string),
+	ca: fs.readFileSync(process.env.SERVER_CA as string)
+};
+
+// Start the HTTPS server
+https.createServer(httpsOptions, app).listen(port, () => {
 	console.log(`Server is running on port ${port}.`);
 });

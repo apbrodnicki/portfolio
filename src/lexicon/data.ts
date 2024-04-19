@@ -58,6 +58,7 @@ export const wordsList: string[] = [
 	'innocuous',
 	'insolence',
 	'intransigent',
+	'liminal',
 	'macabre',
 	'maelstrom',
 	'malady',
