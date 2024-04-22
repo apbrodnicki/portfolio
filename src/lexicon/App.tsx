@@ -1,5 +1,4 @@
-import { Box, CardMedia } from '@mui/material';
-import loader from 'lexicon/assets/loader.webm';
+import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import { useFetchWords } from './api/useFetchWords';
 import { wordsList } from './data';
@@ -12,7 +11,7 @@ export const App = (): React.JSX.Element => {
 
 	return (
 		<>
-			{!isLoading && words.length > 0 && (
+			{/* {!isLoading && words.length > 0 && (
 				words.map((word: Word, index: number) => (
 					<Box key={index}>
 						{word.id} ||
@@ -35,7 +34,13 @@ export const App = (): React.JSX.Element => {
 						height='600px'
 					/>
 				</Box>
-			)}
+			)} */}
+			{words.map((word: Word, index: number) => (
+				<Box key={index}>
+					{word.id} ||
+					{word.speechPart}
+				</Box>
+			))}
 		</>
 	);
 };
