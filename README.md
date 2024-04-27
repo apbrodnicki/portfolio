@@ -9,6 +9,6 @@ Placeholder description about myself.
 ## Packages
 The project is built in React/Typescript.
 
-It uses [MUI](https://mui.com/) for the frontend and [gh-pages](https://github.com/tschaub/gh-pages) for deployment.
+It uses [MUI](https://mui.com/) for the frontend and [Cloudflare Pages](https://pages.cloudflare.com/) for deployment.
 ___
 *Portfolio created by Alex Brodnicki.*
