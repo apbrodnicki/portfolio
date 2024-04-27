@@ -1,6 +1,8 @@
 # Portfolio
 Placeholder description about myself.
 
+You may view the website [here](https://apbrodnicki.com/).
+
 ## Projects
 ### Pokémon Directory
 ### Lexicon

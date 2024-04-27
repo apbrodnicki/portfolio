@@ -5,7 +5,7 @@ The user can add or remove any existing Pokémon they want and will have their d
 
 The backend data is supplied by [PokéApi](https://pokeapi.co/).
 
-It is hosted using Cloudflare Pages, you may view the website [here](https://apbrodnicki.com/pokemon-directory).
+You may view the website [here](https://apbrodnicki.com/pokemon-directory).
 
 ![Home Page](assets/empty-page.png)
 
@@ -14,7 +14,5 @@ It is hosted using Cloudflare Pages, you may view the website [here](https://apb
 ![Add Dropdown](assets/add-dropdown.png)
 
 ![Remove Dropdown](assets/remove-dropdown.png)
-
-
 ___
 *Pokémon Directory was created by Alex Brodnicki.*
