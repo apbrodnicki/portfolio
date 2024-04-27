@@ -1,6 +1,7 @@
 import { Paper, Typography } from '@mui/material';
 import React from 'react';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
+import { Footer } from './Footer';
 import { Header } from './Header';
 
 export const ErrorPage = (): React.JSX.Element => {
@@ -25,14 +26,19 @@ export const ErrorPage = (): React.JSX.Element => {
 				elevation={3}
 				sx={{
 					mx: 'auto',
-					my: 10,
-					width: '50%',
+					my: 15,
+					width: '33%',
 					backgroundColor: '#888888',
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					flex: 1
 				}}>
 				<Typography p={5} align='center'>
 					{errorMessage}
 				</Typography>
 			</Paper>
+			<Footer />
 		</>
 	);
 };

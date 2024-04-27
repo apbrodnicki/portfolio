@@ -6,11 +6,16 @@ import { CustomTooltip } from './custom/CustomTooltip';
 
 export const Header = (): React.JSX.Element => {
 	return (
-		<AppBar position='static' sx={{ backgroundColor: '#222222' }}>
+		<AppBar position='static' color='transparent'>
 			<Toolbar>
-				<Typography variant='h6' sx={{ flexGrow: 1 }}>
-						Alex Brodnicki
+				<Typography variant='h6' color='white' sx={{ flexGrow: 1 }}>
+					Alex Brodnicki
 				</Typography>
+				<Link href='/Alex-Brodnicki-Resume.pdf' target='_blank' mx={1}>
+					<Typography variant='h6'>
+						Resume
+					</Typography>
+				</Link>
 				<Link href='https://github.com/apbrodnicki' target='_blank' mx={1}>
 					<CustomTooltip title='GitHub'>
 						<GitHubIcon fontSize='large' />
