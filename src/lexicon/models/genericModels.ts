@@ -10,5 +10,3 @@ export interface GenericWord {
 }
 
 export interface GenericWordWrapping extends Array<GenericWord> {}
-
-export type GenericWordArray = GenericWord[][];
