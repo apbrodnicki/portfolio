@@ -1,8 +1,8 @@
 import { Box, Grid, Paper, Typography } from '@mui/material';
+import { capitalizeFirstLetter } from 'helper';
 import PopupState, { bindHover, bindPopover } from 'material-ui-popup-state';
 import HoverPopover from 'material-ui-popup-state/HoverPopover';
 import { typeColors } from 'pokemon-directory/data';
-import { capitalizeFirstLetter } from 'pokemon-directory/helper/helper';
 import type { DamageRelation, Type, Types } from 'pokemon-directory/models/models';
 import React from 'react';
 

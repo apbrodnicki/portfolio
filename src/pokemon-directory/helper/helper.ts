@@ -1,3 +1,5 @@
+import { capitalizeFirstLetter } from 'helper';
+
 /**
  * Converts an ability string for cleaner output, dry-skin -> Dry Skin
  * @param {string} name - A dash separated ability string.
@@ -31,15 +33,6 @@ export const formatPokemonName = (name: string): string => {
 	}
 
 	return updatedName;
-};
-
-/**
- * Capitalizes the first letter in a string, parasect -> Parasect
- * @param {string} word
- * @returns {string}
- */
-export const capitalizeFirstLetter = (word: string): string => {
-	return word.charAt(0).toUpperCase() + word.slice(1);
 };
 
 export const getProgressColor = (progressValue: number): string => {
