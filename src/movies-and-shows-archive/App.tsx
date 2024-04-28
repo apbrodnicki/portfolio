@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import { fetchMovie } from './api/fetchMovie';
 
@@ -6,8 +7,8 @@ export const App = (): React.JSX.Element => {
 	void fetchMovie('Jurassic Park', 1993).then((response: any) => response).then((result) => { console.log(result); });
 
 	return (
-		<>
-			movies and shows archive
-		</>
+		<Box id="movies-and-shows-archive">
+			Movies and Shows Archive
+		</Box>
 	);
 };

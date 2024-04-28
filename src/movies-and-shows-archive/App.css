@@ -1,0 +1,6 @@
+#movies-and-shows-archive {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: #FFFDD0;
+}
