@@ -15,6 +15,11 @@ export const filterWordsDataWrapper = (wordWrapping: GenericWordWrapping): Word[
 	const words: Word[] = [];
 
 	for (const word of wordWrapping) {
+		// Skip words with no definitions (they're just alternate spellings)
+		if (word.shortdef.length < 1) {
+			continue;
+		}
+
 		words.push(filterWordsData(word));
 	}
 
