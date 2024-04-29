@@ -1,4 +1,5 @@
-import { Box, Card, CardContent, CardHeader, Dialog, DialogTitle, List, ListItem, ListItemButton, ListItemText, Typography, styled } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { Box, Card, CardContent, CardHeader, Dialog, DialogTitle, IconButton, List, ListItem, ListItemButton, ListItemText, Typography, styled } from '@mui/material';
 import { capitalizeFirstLetter } from 'helper';
 import { LexiconListContext } from 'lexicon/contexts/LexiconListContext';
 import { ShowOffensiveWordsContext } from 'lexicon/contexts/ShowOffensiveWordsContext';
@@ -48,7 +49,12 @@ export const WordsList = (): React.JSX.Element => {
 							/>
 						</StyledListItemButton>
 						<Dialog open={openId === word.id} onClose={() => { setOpenId(''); }}>
-							<DialogTitle>{capitalizeFirstLetter(word.id)}</DialogTitle>
+							<Box display='flex' justifyContent='space-between'>
+								<DialogTitle>{capitalizeFirstLetter(word.id)}</DialogTitle>
+								<IconButton onClick={() => { setOpenId(''); }} sx={{ px: 3, py: 2 }}>
+									<CloseIcon />
+								</IconButton>
+							</Box>
 							<Card>
 								<CardHeader title={word.definitions.length > 1 ? 'Definitions' : 'Definition'} />
 								{word.definitions.map((definition, index) => {

@@ -1,4 +1,5 @@
-import { Box, Button, TextField, Typography } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import { Box, IconButton, TextField } from '@mui/material';
 import { fetchWord } from 'lexicon/api/fetchWord';
 import { LexiconListContext } from 'lexicon/contexts/LexiconListContext';
 import { filterWordDataWrapper } from 'lexicon/helper';
@@ -32,11 +33,9 @@ export const AddWordInput = (): React.JSX.Element => {
 				onChange={onChange}
 				InputProps={{
 					endAdornment: (
-						<Button variant='contained' onClick={onClick} sx={{ mx: 1 }}>
-							<Typography>
-								Submit
-							</Typography>
-						</Button>
+						<IconButton onClick={onClick} sx={{ mx: 0 }}>
+							<AddIcon />
+						</IconButton>
 					)
 				}}
 			/>
