@@ -1,18 +1,17 @@
 import { Box, Card, CardContent, CardHeader, Dialog, DialogTitle, List, ListItem, ListItemButton, ListItemText, Typography, styled } from '@mui/material';
 import { capitalizeFirstLetter } from 'helper';
-import { useFetchWords } from 'lexicon/api/useFetchWords';
+import { LexiconListContext } from 'lexicon/contexts/LexiconListContext';
 import { ShowOffensiveWordsContext } from 'lexicon/contexts/ShowOffensiveWordsContext';
-import { wordsList } from 'lexicon/data';
 import type { Word } from 'lexicon/models/models';
 import React, { useContext, useState } from 'react';
 
 export const WordsList = (): React.JSX.Element => {
 	const { showOffensiveWords } = useContext(ShowOffensiveWordsContext);
+	const { wordsList } = useContext(LexiconListContext);
 
 	const [openId, setOpenId] = useState<string>('');
 
-	const words = useFetchWords({ wordsList });
-	const alphabetizedWords = words.sort((a, b) => a.id.toLowerCase().localeCompare(b.id.toLowerCase()));
+	const alphabetizedWords = wordsList.sort((a, b) => a.id.toLowerCase().localeCompare(b.id.toLowerCase()));
 
 	const onClick = (wordId: string): void => {
 		setOpenId(wordId);
