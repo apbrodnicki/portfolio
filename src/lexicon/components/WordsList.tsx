@@ -1,4 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
+import RemoveIcon from '@mui/icons-material/Remove';
 import { Box, Card, CardContent, CardHeader, Dialog, DialogTitle, IconButton, List, ListItem, ListItemButton, ListItemText, Typography, styled } from '@mui/material';
 import { capitalizeFirstLetter } from 'helper';
 import { LexiconListContext } from 'lexicon/contexts/LexiconListContext';
@@ -8,14 +9,19 @@ import React, { useContext, useState } from 'react';
 
 export const WordsList = (): React.JSX.Element => {
 	const { showOffensiveWords } = useContext(ShowOffensiveWordsContext);
-	const { wordsList } = useContext(LexiconListContext);
+	const { wordsList, setWordsList } = useContext(LexiconListContext);
 
 	const [openId, setOpenId] = useState<string>('');
 
 	const alphabetizedWords = wordsList.sort((a, b) => a.id.toLowerCase().localeCompare(b.id.toLowerCase()));
 
-	const onClick = (wordId: string): void => {
+	const openDialog = (wordId: string): void => {
 		setOpenId(wordId);
+	};
+
+	const removeWord = (event: React.MouseEvent<HTMLButtonElement>, word: Word): void => {
+		event.stopPropagation();
+		setWordsList(wordsList.filter((currentWord) => currentWord.id !== word.id));
 	};
 
 	const StyledListItemButton = styled(ListItemButton)(() => ({
@@ -37,7 +43,7 @@ export const WordsList = (): React.JSX.Element => {
 			<List>
 				{alphabetizedWords.map((word: Word, index: number) => (
 					<ListItem key={index} sx={{ filter: showOffensiveWords ? 'none' : word.offensive ? 'blur(3px)' : 'none' }}>
-						<StyledListItemButton onClick={() => { onClick(word.id); }}>
+						<StyledListItemButton onClick={() => { openDialog(word.id); }}>
 							<ListItemText
 								primary={`${capitalizeFirstLetter(word.id)} (${word.speechPart})`}
 								sx={{ mx: 5 }}
@@ -47,6 +53,9 @@ export const WordsList = (): React.JSX.Element => {
 								primary={capitalizeFirstLetter(word.definitions[0])}
 								sx={{ mx: 1, textAlign: 'left' }}
 							/>
+							<IconButton onClick={(event) => { removeWord(event, word); }}>
+								<RemoveIcon />
+							</IconButton>
 						</StyledListItemButton>
 						<Dialog open={openId === word.id} onClose={() => { setOpenId(''); }}>
 							<Box display='flex' justifyContent='space-between'>

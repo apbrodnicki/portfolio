@@ -17,7 +17,7 @@ export const Header = (): React.JSX.Element => {
 	return (
 		<Box m={2} display='flex' alignItems='center' justifyContent='center'>
 			<Box flex={1} />
-			<StyledButton variant='text' color='primary'>
+			<StyledButton variant='text'>
 				<Typography variant='h3'>
 					Lexicon
 				</Typography>
