@@ -13,11 +13,16 @@ export const AddWordInput = (): React.JSX.Element => {
 		setWord(event.target.value);
 	};
 
-	const onClick = async (): Promise<void> => {
-		const genericWordWrapper = await fetchWord(word);
-		const wordsToAdd = filterWordDataWrapper(genericWordWrapper);
+	const onClick = (): void => {
+		fetchWord(word)
+			.then((genericWordWrapper) => {
+				const wordsToAdd = filterWordDataWrapper(genericWordWrapper);
 
-		setWordsList([...wordsList, ...wordsToAdd]);
+				setWordsList([...wordsList, ...wordsToAdd]);
+			})
+			.catch((error: unknown) => {
+				console.log('Error fetching words ->', error);
+			});
 	};
 
 	return (
@@ -27,7 +32,7 @@ export const AddWordInput = (): React.JSX.Element => {
 				onChange={onChange}
 				InputProps={{
 					endAdornment: (
-						<Button variant='contained' onClick={() => onClick} sx={{ mx: 1 }}>
+						<Button variant='contained' onClick={onClick} sx={{ mx: 1 }}>
 							<Typography>
 								Submit
 							</Typography>
