@@ -6,7 +6,7 @@ export interface GenericWord {
 	},
 	fl: string,
 	shortdef: string[],
-	[key: string]: unknown,
+	[key: string]: unknown
 }
 
-export interface GenericWordWrapping extends Array<GenericWord> {}
+export interface GenericWordWrapper extends Array<GenericWord> {}

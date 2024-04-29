@@ -1,7 +1,7 @@
-import type { GenericWord, GenericWordWrapping } from 'lexicon/models/genericModels';
+import type { GenericWord, GenericWordWrapper } from 'lexicon/models/genericModels';
 import type { PartsOfSpeech, Word } from 'lexicon/models/models';
 
-export const filterWordsData = (word: GenericWord): Word => {
+export const filterWordData = (word: GenericWord): Word => {
 	return {
 		id: word.meta.id,
 		stems: word.meta.stems,
@@ -11,16 +11,16 @@ export const filterWordsData = (word: GenericWord): Word => {
 	};
 };
 
-export const filterWordsDataWrapper = (wordWrapping: GenericWordWrapping): Word[] => {
+export const filterWordDataWrapper = (wordWrapper: GenericWordWrapper): Word[] => {
 	const words: Word[] = [];
 
-	for (const word of wordWrapping) {
+	for (const word of wordWrapper) {
 		// Skip words with no definitions (they're just alternate spellings)
 		if (word.shortdef.length < 1) {
 			continue;
 		}
 
-		words.push(filterWordsData(word));
+		words.push(filterWordData(word));
 	}
 
 	return words;

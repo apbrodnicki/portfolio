@@ -15,5 +15,6 @@ export interface PartsOfSpeech {
 	preposition: string,
 	conjunction: string,
 	interjection: string,
-	idiom: string
+	idiom: string,
+	[key: string]: unknown
 }
