@@ -1,11 +1,11 @@
 import { Box, Paper } from '@mui/material';
 import { DataGrid, type GridColDef } from '@mui/x-data-grid';
+import { reduceArray } from 'helper';
 import { useFetchAbilityDescriptions } from 'pokemon-directory/api/useFetchAbilityDescriptions';
 import { useFetchPokemon } from 'pokemon-directory/api/useFetchPokemon';
 import { useFetchTypes } from 'pokemon-directory/api/useFetchTypes';
 import { PokemonListContext } from 'pokemon-directory/contexts/PokemonListContext';
 import { getDataGridColumns } from 'pokemon-directory/helper/getDataGridColumns';
-import { reduceArray } from 'pokemon-directory/helper/helper';
 import { type Pokemon } from 'pokemon-directory/models/models';
 import React, { useContext, useState } from 'react';
 import { Loader } from './Loader';
@@ -20,10 +20,10 @@ export const PokemonDataGrid = (): React.JSX.Element => {
 
 	const pokemon = useFetchPokemon({ pokemonList, setIsLoadingPokemon });
 
-	const abilities = reduceArray(pokemon.map(mon => mon.abilities));
+	const abilities = reduceArray(pokemon.map(mon => mon.abilities)) as string[];
 	const abilitiesWithDescriptions = useFetchAbilityDescriptions({ abilities, setIsLoadingAbilityDescriptions });
 
-	const typesList = reduceArray(pokemon.map(mon => mon.types));
+	const typesList = reduceArray(pokemon.map(mon => mon.types)) as string[];
 	const types = useFetchTypes({ typesList, setIsLoadingTypes });
 
 	const columns: GridColDef[] = getDataGridColumns({ abilitiesWithDescriptions, types });

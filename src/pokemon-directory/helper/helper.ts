@@ -58,21 +58,6 @@ export const getProgressColor = (progressValue: number): string => {
 	return 'primary';
 };
 
-export const reduceArray = (abilities: string[][]): string[] => {
-	return abilities.reduce(
-		(accumulator, currentArray) => {
-			for (const currentAbility of currentArray) {
-				if (!accumulator.includes(currentAbility)) {
-					accumulator.push(currentAbility);
-				}
-			}
-
-			return accumulator;
-		},
-		[]
-	);
-};
-
 export const getGeneration = (pokedexNumber: number): string => {
 	if (pokedexNumber <= 151) {
 		return 'Generation I';
