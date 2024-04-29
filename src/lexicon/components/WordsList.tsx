@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Dialog, DialogTitle, List, ListItem, ListItemButton, ListItemText, Typography, styled } from '@mui/material';
+import { Box, Card, CardContent, CardHeader, Dialog, DialogTitle, List, ListItem, ListItemButton, ListItemText, Typography, styled } from '@mui/material';
 import { capitalizeFirstLetter } from 'helper';
 import { useFetchWords } from 'lexicon/api/useFetchWords';
 import { ShowOffensiveWordsContext } from 'lexicon/contexts/ShowOffensiveWordsContext';
@@ -24,8 +24,7 @@ export const WordsList = (): React.JSX.Element => {
 				0px 3px 3px -2px rgba(0, 0, 0, 0.2),
 				0px 3px 4px 0px rgba(0, 0, 0, 0.14),
 				0px 1px 8px 0px rgba(0, 0, 0, 0.12)
-			`,
-			transition: 'box-shadow 0.2s ease'
+			`
 		}
 	}));
 
@@ -52,6 +51,7 @@ export const WordsList = (): React.JSX.Element => {
 						<Dialog open={openId === word.id} onClose={() => { setOpenId(''); }}>
 							<DialogTitle>{capitalizeFirstLetter(word.id)}</DialogTitle>
 							<Card>
+								<CardHeader title={word.definitions.length > 1 ? 'Definitions' : 'Definition'} />
 								{word.definitions.map((definition, index) => {
 									if (word.definitions.length > 1) {
 										return (
@@ -78,6 +78,7 @@ export const WordsList = (): React.JSX.Element => {
 								})}
 							</Card>
 							<Card>
+								<CardHeader title={word.stems.length > 1 ? 'Stems' : 'Stem'} />
 								{word.stems.map((stem: string, index: number) => (
 									<CardContent key={index}>
 										<Typography>

@@ -22,7 +22,7 @@ export const Header = (): React.JSX.Element => {
 					Lexicon
 				</Typography>
 			</StyledButton>
-			<FormGroup sx={{ flex: 1 }}>
+			<FormGroup sx={{ flex: 1, alignItems: 'center' }}>
 				<FormControlLabel control={<Switch onChange={onChange} />} label='Reveal offensive words' />
 			</FormGroup>
 		</Box>
