@@ -6,12 +6,13 @@ import { wordsList } from 'lexicon/data';
 import type { Word } from 'lexicon/models/models';
 import React, { useContext, useState } from 'react';
 
-export const WordList = (): React.JSX.Element => {
+export const WordsList = (): React.JSX.Element => {
 	const { showOffensiveWords } = useContext(ShowOffensiveWordsContext);
 
 	const [openId, setOpenId] = useState<string>('');
 
 	const words = useFetchWords({ wordsList });
+	const alphabetizedWords = words.sort((a, b) => a.id.toLowerCase().localeCompare(b.id.toLowerCase()));
 
 	const onClick = (wordId: string): void => {
 		setOpenId(wordId);
@@ -35,7 +36,7 @@ export const WordList = (): React.JSX.Element => {
 			flex={1}
 		>
 			<List>
-				{words.map((word: Word, index: number) => (
+				{alphabetizedWords.map((word: Word, index: number) => (
 					<ListItem key={index} sx={{ filter: showOffensiveWords ? 'none' : word.offensive ? 'blur(3px)' : 'none' }}>
 						<StyledListItemButton onClick={() => { onClick(word.id); }}>
 							<ListItemText

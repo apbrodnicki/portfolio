@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import './App.css';
 import { Header } from './components/Header';
-import { WordList } from './components/WordList';
+import { WordsList } from './components/WordsList';
 import { ShowOffensiveWordsContext } from './contexts/ShowOffensiveWordsContext';
 
 export const App = (): React.JSX.Element => {
@@ -12,7 +12,7 @@ export const App = (): React.JSX.Element => {
 		<Box id="lexicon">
 			<ShowOffensiveWordsContext.Provider value={{ showOffensiveWords, setShowOffensiveWords }}>
 				<Header />
-				<WordList />
+				<WordsList />
 			</ShowOffensiveWordsContext.Provider>
 		</Box>
 	);
