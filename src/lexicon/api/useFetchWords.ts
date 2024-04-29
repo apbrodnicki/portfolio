@@ -1,4 +1,5 @@
-import { filterWordsData } from 'lexicon/helper';
+import { reduceArray } from 'helper';
+import { filterWordsDataWrapper } from 'lexicon/helper';
 import type { Word } from 'lexicon/models/models';
 import { useEffect, useState } from 'react';
 import { fetchWord } from './fetchWord';
@@ -15,8 +16,8 @@ export const useFetchWords = ({ wordsList }: useFetchWordsProps): Word[] => {
 			try {
 				const promises = wordsList.map(async (word: string) => await fetchWord(word));
 				const wordsData = await Promise.all(promises);
-				const filteredWords = wordsData.map(filterWordsData);
-				setWords(filteredWords);
+				const filteredWords = wordsData.map(filterWordsDataWrapper);
+				setWords(reduceArray(filteredWords) as Word[]);
 			} catch (error) {
 				console.log('Error fetching words ->', error);
 			}

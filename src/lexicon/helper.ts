@@ -1,14 +1,22 @@
-import type { GenericWordWrapping } from 'lexicon/models/genericModels';
+import type { GenericWord, GenericWordWrapping } from 'lexicon/models/genericModels';
 import type { PartsOfSpeech, Word } from 'lexicon/models/models';
 
-export const filterWordsData = (word: GenericWordWrapping): Word => {
-	const innerWord = word[0];
-
+export const filterWordsData = (word: GenericWord): Word => {
 	return {
-		id: innerWord.meta.id,
-		stems: innerWord.meta.stems,
-		offensive: innerWord.meta.offensive,
-		speechPart: innerWord.fl as keyof PartsOfSpeech,
-		definitions: innerWord.shortdef,
+		id: word.meta.id,
+		stems: word.meta.stems,
+		offensive: word.meta.offensive,
+		speechPart: word.fl as keyof PartsOfSpeech,
+		definitions: word.shortdef,
 	};
+};
+
+export const filterWordsDataWrapper = (wordWrapping: GenericWordWrapping): Word[] => {
+	const words: Word[] = [];
+
+	for (const word of wordWrapping) {
+		words.push(filterWordsData(word));
+	}
+
+	return words;
 };
