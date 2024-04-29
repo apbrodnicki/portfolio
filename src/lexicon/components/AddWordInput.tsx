@@ -18,18 +18,19 @@ export const AddWordInput = (): React.JSX.Element => {
 		fetchWord(word)
 			.then((genericWordWrapper) => {
 				const wordsToAdd = filterWordDataWrapper(genericWordWrapper);
-
 				setWordsList([...wordsList, ...wordsToAdd]);
 			})
 			.catch((error: unknown) => {
 				console.log('Error fetching words ->', error);
-			});
+			})
+			.finally(() => { setWord(''); });
 	};
 
 	return (
 		<Box display='flex' justifyContent='center' my={2}>
 			<TextField
 				label='Add a word'
+				value={word}
 				onChange={onChange}
 				InputProps={{
 					endAdornment: (
