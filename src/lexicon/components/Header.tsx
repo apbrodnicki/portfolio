@@ -15,14 +15,14 @@ export const Header = (): React.JSX.Element => {
 	}));
 
 	return (
-		<Box m={2} display='flex' alignItems='center' justifyContent='center'>
+		<Box m={2} display='flex' alignItems='center' justifyContent='center' flexDirection={{ xs: 'column', md: 'row' }}>
 			<Box flex={1} />
 			<StyledButton variant='text'>
 				<Typography variant='h3'>
 					Lexicon
 				</Typography>
 			</StyledButton>
-			<FormGroup sx={{ flex: 1, alignItems: 'center' }}>
+			<FormGroup sx={{ flex: 1, alignItems: 'center', mt: { xs: 1, md: 0 } }}>
 				<FormControlLabel control={<Switch onChange={onChange} />} label='Reveal offensive words' />
 			</FormGroup>
 		</Box>

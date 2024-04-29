@@ -4,10 +4,10 @@ import React from 'react';
 
 export const Footer = (): React.JSX.Element => {
 	return (
-		<Box display='flex' alignItems='center' justifyContent='center' m={2}>
+		<Box display='flex' alignItems='center' justifyContent='center' flexDirection={{ xs: 'column', md: 'row' }} m={2}>
 			<Box flex={1} />
 			<Box flex={1} display='flex' justifyContent='center'>
-				<Typography variant='subtitle2' mx={1}>
+				<Typography variant='subtitle2' m={2}>
 					Created by Alex Brodnicki
 				</Typography>
 			</Box>
@@ -20,8 +20,8 @@ export const Footer = (): React.JSX.Element => {
 						component='img'
 						src={merriamWebsterLogo}
 						alt='Merriam-Webster logo'
-						width='100px'
-						height='100px'
+						width={{ xs: '50px', md: '100px' }}
+						height={{ xs: '50px', md: '100px' }}
 					/>
 				</MuiLink>
 			</Box>

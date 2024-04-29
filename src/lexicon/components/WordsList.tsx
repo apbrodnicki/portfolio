@@ -40,7 +40,7 @@ export const WordsList = (): React.JSX.Element => {
 			justifyContent='center'
 			flex={1}
 		>
-			<List>
+			<List sx={{ m: 2 }}>
 				{alphabetizedWords.map((word: Word, index: number) => (
 					<ListItem key={index} sx={{ filter: showOffensiveWords ? 'none' : word.offensive ? 'blur(3px)' : 'none' }}>
 						<StyledListItemButton onClick={() => { openDialog(word.id); }}>
