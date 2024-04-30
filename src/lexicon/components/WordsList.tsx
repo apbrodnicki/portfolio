@@ -6,7 +6,9 @@ import { LexiconListContext } from 'lexicon/contexts/LexiconListContext';
 import { ShowOffensiveWordsContext } from 'lexicon/contexts/ShowOffensiveWordsContext';
 import type { Word } from 'lexicon/models/models';
 import React, { useContext, useState } from 'react';
-
+// TODO:
+// Add option to choose which definition shows up on base list
+// Remove duplicate entries when adding new word
 export const WordsList = (): React.JSX.Element => {
 	const { showOffensiveWords } = useContext(ShowOffensiveWordsContext);
 	const { wordsList, setWordsList } = useContext(LexiconListContext);
@@ -40,9 +42,9 @@ export const WordsList = (): React.JSX.Element => {
 			justifyContent='center'
 			flex={1}
 		>
-			<List sx={{ m: 2 }}>
+			<List sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', m: 2 }}>
 				{alphabetizedWords.map((word: Word, index: number) => (
-					<ListItem key={index} sx={{ filter: showOffensiveWords ? 'none' : word.offensive ? 'blur(3px)' : 'none' }}>
+					<ListItem key={index} sx={{ maxWidth: '75%', filter: showOffensiveWords ? 'none' : word.offensive ? 'blur(3px)' : 'none' }}>
 						<StyledListItemButton onClick={() => { openDialog(word.id); }}>
 							<ListItemText
 								primary={`${capitalizeFirstLetter(word.id)} (${word.speechPart})`}
@@ -51,7 +53,7 @@ export const WordsList = (): React.JSX.Element => {
 							<ListItemText
 								key={index}
 								primary={capitalizeFirstLetter(word.definitions[0])}
-								sx={{ mx: 1, textAlign: 'left' }}
+								sx={{ mx: 5, textAlign: 'left' }}
 							/>
 							<IconButton onClick={(event) => { removeWord(event, word); }}>
 								<RemoveIcon />

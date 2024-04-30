@@ -14,6 +14,12 @@ export const AddWordInput = (): React.JSX.Element => {
 		setWord(event.target.value);
 	};
 
+	const onKeyUp = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+		if (event.key === 'Enter') {
+			onClick();
+		}
+	};
+
 	const onClick = (): void => {
 		fetchWord(word)
 			.then((genericWordWrapper) => {
@@ -32,6 +38,7 @@ export const AddWordInput = (): React.JSX.Element => {
 				label='Add a word'
 				value={word}
 				onChange={onChange}
+				onKeyUp={onKeyUp}
 				InputProps={{
 					endAdornment: (
 						<IconButton onClick={onClick} sx={{ mx: 0 }}>
