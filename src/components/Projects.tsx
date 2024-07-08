@@ -1,17 +1,8 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Accordion, AccordionDetails, AccordionSummary, Paper, Typography, styled } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Link, Paper, Typography } from '@mui/material';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export const Projects = (): React.JSX.Element => {
-	const StyledLink = styled(Link)`
-		text-decoration: none;
-
-		&:active {
-			color: black;
-		}
-	`;
-
 	return (
 		<Paper elevation={3} sx={{ m: 5, backgroundColor: '#888888' }}>
 			<Typography variant='h5' px={5} py={3}>
@@ -30,11 +21,11 @@ export const Projects = (): React.JSX.Element => {
 					<Typography align='center'>
 							It was also really important for me to be able to easily compare two or more Pokémon and save my searches.
 					</Typography>
-					<StyledLink to='/pokemon-directory' target='_blank'>
+					<Link href="https://pokemon-directory.apbrodnicki.com/">
 						<Typography align='center'>
 							You can view the project here!
 						</Typography>
-					</StyledLink>
+					</Link>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion sx={{ backgroundColor: '#CCCCCC', float: 'right', width: '85%' }}>
@@ -44,14 +35,14 @@ export const Projects = (): React.JSX.Element => {
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<StyledLink to='/lexicon' target='_blank'>
-						<Typography align='center'>
+					<Typography align='center'>
 							Lexicon was built because I love words.
-						</Typography>
+					</Typography>
+					<Link href="https://lexicon.apbrodnicki.com/">
 						<Typography align='center'>
-
+							You can view the project here!
 						</Typography>
-					</StyledLink>
+					</Link>
 				</AccordionDetails>
 			</Accordion>
 			<Accordion sx={{ backgroundColor: '#CCCCCC', float: 'right', width: '85%' }}>
@@ -61,11 +52,11 @@ export const Projects = (): React.JSX.Element => {
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<StyledLink to='/movies-and-shows-archive' target='_blank'>
+					<Link href="">
 						<Typography align='center'>
-							Movies and Shows Archive
+						You can view the project here!
 						</Typography>
-					</StyledLink>
+					</Link>
 				</AccordionDetails>
 			</Accordion>
 		</Paper>
