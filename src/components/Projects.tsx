@@ -21,7 +21,7 @@ export const Projects = (): React.JSX.Element => {
 					<Typography align='center'>
 							It was also really important for me to be able to easily compare two or more Pokémon and save my searches.
 					</Typography>
-					<Link href="https://pokemon-directory.apbrodnicki.com/">
+					<Link href="https://pokemon-directory.apbrodnicki.com/" target='_blank'>
 						<Typography align='center'>
 							You can view the project here!
 						</Typography>
@@ -38,27 +38,27 @@ export const Projects = (): React.JSX.Element => {
 					<Typography align='center'>
 							Lexicon was built because I love words.
 					</Typography>
-					<Link href="https://lexicon.apbrodnicki.com/">
+					<Link href="https://lexicon.apbrodnicki.com/" target='_blank'>
 						<Typography align='center'>
 							You can view the project here!
 						</Typography>
 					</Link>
 				</AccordionDetails>
 			</Accordion>
-			<Accordion sx={{ backgroundColor: '#CCCCCC', float: 'right', width: '85%' }}>
+			{/* <Accordion sx={{ backgroundColor: '#CCCCCC', float: 'right', width: '85%' }}>
 				<AccordionSummary expandIcon={<ExpandMoreIcon />}>
 					<Typography align='center'>
 						Movies and Shows Archive
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
-					<Link href="">
+					<Link href="https://movies-and-shows-archive.apbrodnicki.com/" target='_blank'>
 						<Typography align='center'>
-						You can view the project here!
+							You can view the project here!
 						</Typography>
 					</Link>
 				</AccordionDetails>
-			</Accordion>
+			</Accordion> */}
 		</Paper>
 	);
 };

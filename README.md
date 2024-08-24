@@ -6,7 +6,6 @@ You may view the website [here](https://apbrodnicki.com/).
 ## Projects
 ### Pokémon Directory
 ### Lexicon
-### Movies and Shows Archive
 
 ## Packages
 The project is built in React/Typescript.
