@@ -9,6 +9,7 @@ export const Footer = (): React.JSX.Element => {
 			behavior: 'smooth'
 		});
 	};
+
 	return (
 		<Paper elevation={3} sx={{ m: 2, p: 4, backgroundColor: '#888888' }}>
 			<Box display='flex' alignItems='center' justifyContent='space-between'>

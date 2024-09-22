@@ -7,5 +7,3 @@ tsconfig.tsbuildinfo
 
 # misc
 /.vscode
-.env
-portfolio-key-pair.pem
