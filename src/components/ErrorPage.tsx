@@ -1,22 +1,22 @@
 import { Paper, Typography } from '@mui/material';
 import React from 'react';
-import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-export const ErrorPage = (): React.JSX.Element => {
-	const error = useRouteError();
+interface ErrorPageProps {
+	error: unknown;
+}
+
+export const ErrorPage = ({ error }: ErrorPageProps): React.JSX.Element => {
 	let errorMessage: string;
 
-	if (isRouteErrorResponse(error)) {
-		errorMessage = error.statusText;
-	} else if (error instanceof Error) {
+	if (error instanceof Error) {
 		errorMessage = error.message;
 	} else if (typeof error === 'string') {
 		errorMessage = error;
 	} else {
-		console.error(error);
 		errorMessage = 'An unknown error has occurred.';
+		console.error(error);
 	}
 
 	return (

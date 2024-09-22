@@ -45,20 +45,6 @@ export const Projects = (): React.JSX.Element => {
 					</Link>
 				</AccordionDetails>
 			</Accordion>
-			{/* <Accordion sx={{ backgroundColor: '#CCCCCC', float: 'right', width: '85%' }}>
-				<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-					<Typography align='center'>
-						Movies and Shows Archive
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Link href="https://movies-and-shows-archive.apbrodnicki.com/" target='_blank'>
-						<Typography align='center'>
-							You can view the project here!
-						</Typography>
-					</Link>
-				</AccordionDetails>
-			</Accordion> */}
 		</Paper>
 	);
 };
