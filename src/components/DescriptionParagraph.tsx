@@ -7,7 +7,7 @@ interface DescriptionParagraphProps {
 
 export const DescriptionParagraph = ({ text }: DescriptionParagraphProps): React.JSX.Element => (
 	<Typography
-		variant='subtitle1'
+		variant='subtitle2'
 		color='primary'
 		margin={2}
 		width='90%'
