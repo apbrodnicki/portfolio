@@ -15,7 +15,13 @@ export const CustomLink = ({ href, mx, children }: CustomLinkProps): React.JSX.E
 		sx={{
 			textDecoration: 'none',
 			'& :hover': {
-				color: 'yellow'
+				color: '#8E8E8E'
+			},
+			'& :focus': {
+				color: '#8E8E8E'
+			},
+			'& :active': {
+				color: '#8E8E8E'
 			}
 		}}>
 		{children}
