@@ -1,5 +1,5 @@
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import { Box, Button, Link, Paper, Typography } from '@mui/material';
+import { Box, Button, Link, Typography } from '@mui/material';
 import React from 'react';
 
 export const Footer = (): React.JSX.Element => {
@@ -11,17 +11,23 @@ export const Footer = (): React.JSX.Element => {
 	};
 
 	return (
-		<Paper elevation={3} sx={{ m: 2, p: 4, backgroundColor: '#888888' }}>
+		<Box pb={3}>
+			<Typography variant='h6' color='primary'>
+				{'Let\'s get in touch!'}
+			</Typography>
+			<Typography variant='subtitle1' color='primary'>
+				Feel free to email me or send a message on LinkedIn.
+			</Typography>
 			<Box display='flex' alignItems='center' justifyContent='space-between'>
-				<Link href='mailto:apbrodnicki@gmail.com' color='#111111'>
-					<Typography variant='subtitle2' align='center'>
-						Email me!
+				<Link href='mailto:apbrodnicki@gmail.com' sx={{ textDecoration: 'none' }}>
+					<Typography variant='subtitle1' color='primary' sx={{ float: 'right' }}>
+						apbrodnicki@gmail.com
 					</Typography>
 				</Link>
 				<Button variant='contained' onClick={onClick}>
 					<KeyboardDoubleArrowUpIcon />
 				</Button>
 			</Box>
-		</Paper>
+		</Box>
 	);
 };

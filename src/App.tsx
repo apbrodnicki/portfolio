@@ -20,9 +20,9 @@ export const App = (): React.JSX.Element => {
 			<Box
 				display='flex'
 				flexDirection='column'
-				justifyContent='center'
+				justifyContent='flex-start'
 				flex={1}
-				mt={3}
+				mx={2}
 			>
 				<About />
 				<Projects />

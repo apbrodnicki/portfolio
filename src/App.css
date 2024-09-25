@@ -6,13 +6,16 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	background-color: #111821;
+	align-items: center;
+	background-color: #222222;
 }
 
 #portfolio {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	max-width: 600px;
+	margin: 0px 32px 0px 32px;
 }
 
 /* #000000 (Black)
