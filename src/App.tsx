@@ -10,23 +10,23 @@ import './App.css';
 export const App = (): React.JSX.Element => {
 	const route = window.location.pathname;
 
-	if (route !== '/') {
-		return <ErrorPage error='Page not found.' />;
-	}
-
 	return (
-		<Box id="portfolio">
+		<Box id="portfolio" sx={{ width: { xs: 'unset', sm: '600px' } }}>
 			<Header />
-			<Box
-				display='flex'
-				flexDirection='column'
-				justifyContent='flex-start'
-				flex={1}
-				mx={2}
-			>
-				<About />
-				<Projects />
-			</Box>
+			{route === '/' ? (
+				<Box
+					display='flex'
+					flexDirection='column'
+					justifyContent='flex-start'
+					flex={1}
+					mx={2}
+				>
+					<About />
+					<Projects />
+				</Box>
+			) : (
+				<ErrorPage error='Page not found.' />
+			)}
 			<Footer />
 		</Box>
 	);

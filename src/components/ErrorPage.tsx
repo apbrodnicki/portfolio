@@ -1,7 +1,5 @@
-import { Paper, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
-import { Footer } from './Footer';
-import { Header } from './Header';
 
 interface ErrorPageProps {
 	error: unknown;
@@ -20,25 +18,17 @@ export const ErrorPage = ({ error }: ErrorPageProps): React.JSX.Element => {
 	}
 
 	return (
-		<>
-			<Header />
-			<Paper
-				elevation={3}
-				sx={{
-					mx: 'auto',
-					my: 15,
-					width: '33%',
-					backgroundColor: '#888888',
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'center',
-					flex: 1
-				}}>
-				<Typography p={5} align='center'>
-					{errorMessage}
-				</Typography>
-			</Paper>
-			<Footer />
-		</>
+		<Box
+			display='flex'
+			flexDirection='column'
+			justifyContent='center'
+			alignItems='center'
+			flex={1}
+			mx={2}
+		>
+			<Typography variant='h6' color='primary'>
+				{errorMessage}
+			</Typography>
+		</Box>
 	);
 };

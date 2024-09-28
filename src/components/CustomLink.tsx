@@ -3,14 +3,15 @@ import React from 'react';
 
 interface CustomLinkProps {
 	href: string;
+	target?: string;
 	mx?: number;
 	children: React.ReactNode;
 }
 
-export const CustomLink = ({ href, mx, children }: CustomLinkProps): React.JSX.Element => (
+export const CustomLink = ({ href, target, mx, children }: CustomLinkProps): React.JSX.Element => (
 	<Link
 		href={href}
-		target='_blank'
+		target={target ?? '_blank'}
 		mx={mx}
 		sx={{
 			textDecoration: 'none',

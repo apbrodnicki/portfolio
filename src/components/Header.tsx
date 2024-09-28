@@ -8,19 +8,21 @@ export const Header = (): React.JSX.Element => (
 	<AppBar position='sticky' color='secondary'>
 		<Toolbar>
 			<Box flexGrow={1}>
-				<Typography variant='h6' color='primary'>
+				<CustomLink href='/' target='self'>
+					<Typography variant='h6' color='primary'>
 					AB
-				</Typography>
+					</Typography>
+				</CustomLink>
 			</Box>
-			<CustomLink href='/Alex-Brodnicki-Resume.pdf'mx={1}>
+			<CustomLink href='/Alex-Brodnicki-Resume.pdf' mx={1}>
 				<Typography variant='h6' color='primary'>
 					Resume
 				</Typography>
 			</CustomLink>
-			<CustomLink href='https://github.com/apbrodnicki/'mx={1}>
+			<CustomLink href='https://github.com/apbrodnicki/' mx={1}>
 				<GitHubIcon fontSize='large' />
 			</CustomLink>
-			<CustomLink href='https://www.linkedin.com/in/alex-brodnicki/'mx={1}>
+			<CustomLink href='https://www.linkedin.com/in/alex-brodnicki/' mx={1}>
 				<LinkedInIcon fontSize='large' />
 			</CustomLink>
 		</Toolbar>
