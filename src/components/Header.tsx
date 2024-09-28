@@ -1,5 +1,4 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
-import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import React from 'react';
@@ -9,7 +8,9 @@ export const Header = (): React.JSX.Element => (
 	<AppBar position='sticky' color='secondary'>
 		<Toolbar>
 			<Box flexGrow={1}>
-				<GraphicEqIcon color='primary' />
+				<Typography variant='h6' color='primary'>
+					AB
+				</Typography>
 			</Box>
 			<CustomLink href='/Alex-Brodnicki-Resume.pdf'mx={1}>
 				<Typography variant='h6' color='primary'>
