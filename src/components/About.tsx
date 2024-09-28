@@ -15,11 +15,13 @@ export const About = (): React.JSX.Element => {
 			</Typography>
 			<DescriptionParagraph
 				text={
-					'Hi, my name is Alex and I\'m a passionate and motivated software engineer. I love working on web applications, it\'s a passion of mine and the reason why I created this portfolio page. You can find the personal projects that I have built further down the page.'
+					'Hi, my name is Alex and I\'m a passionate and motivated software engineer. I love working on web applications, it\'s a passion of mine and the reason why I created this portfolio page. You can find some of the the personal projects that I have built down below.'
 				}
 			/>
 			<DescriptionParagraph
-				text={'I\'ve been working in this field for over three years now and have garnered experience in a variety of technologies, including...'}
+				text={
+					'I\'ve been working in this field for over three years now and have garnered experience in a variety of technologies, including...'
+				}
 			/>
 			<List
 				sx={{

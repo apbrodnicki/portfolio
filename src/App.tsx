@@ -11,7 +11,7 @@ export const App = (): React.JSX.Element => {
 	const route = window.location.pathname;
 
 	return (
-		<Box id="portfolio" sx={{ width: { xs: 'unset', sm: '600px' } }}>
+		<Box id="portfolio" sx={{ width: { sm: '600px' } }}>
 			<Header />
 			{route === '/' ? (
 				<Box
