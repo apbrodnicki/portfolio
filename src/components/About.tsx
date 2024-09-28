@@ -3,7 +3,7 @@ import React from 'react';
 import { DescriptionParagraph } from './DescriptionParagraph';
 
 export const About = (): React.JSX.Element => {
-	const skills: string[] = ['JavaScript', 'TypeScript', 'React', 'Angular', 'C#', '.NET', 'PHP', 'MySQL', 'MongoDB'];
+	const skills: string[] = ['JavaScript', 'TypeScript', 'React', 'Angular', 'C#', '.NET', 'PHP', 'MySQL', 'MongoDB', 'Git'];
 
 	return (
 		<Box pt={5}>
