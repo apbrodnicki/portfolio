@@ -8,9 +8,9 @@ export const Header = (): React.JSX.Element => (
 	<AppBar position='sticky' color='secondary'>
 		<Toolbar>
 			<Box flexGrow={1}>
-				<CustomLink href='/' target='self'>
+				<CustomLink href='/' target='_self'>
 					<Typography variant='h6' color='primary'>
-					AB
+						AB
 					</Typography>
 				</CustomLink>
 			</Box>
