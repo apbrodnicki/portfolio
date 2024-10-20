@@ -12,6 +12,7 @@ export const CustomLink = ({ href, target, mx, children }: CustomLinkProps): Rea
 	<Link
 		href={href}
 		target={target ?? '_blank'}
+		display='inline-block'
 		mx={mx}
 		sx={{
 			textDecoration: 'none',

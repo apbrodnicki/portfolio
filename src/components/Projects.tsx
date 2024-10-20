@@ -38,7 +38,7 @@ export const Projects = (): React.JSX.Element => (
 		<Box my={2}>
 			<CustomLink href='https://github.com/apbrodnicki/draft-league-bot/'>
 				<Typography variant='subtitle1' color='primary'>
-				github.com/apbrodnicki/draft-league-bot
+					github.com/apbrodnicki/draft-league-bot
 				</Typography>
 			</CustomLink>
 			<DescriptionParagraph

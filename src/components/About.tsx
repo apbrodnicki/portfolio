@@ -15,7 +15,7 @@ export const About = (): React.JSX.Element => {
 			</Typography>
 			<DescriptionParagraph
 				text={
-					'Hi, my name is Alex and I\'m a passionate and motivated software engineer. I love working on web applications, it\'s a passion of mine and the reason why I created this portfolio page. You can find some of the the personal projects that I have built down below.'
+					'Hi, my name is Alex and I\'m a passionate and motivated software engineer. I love working on web applications, it\'s a passion of mine and the reason why I created this portfolio page. You can find some of the personal projects that I have built down below.'
 				}
 			/>
 			<DescriptionParagraph
