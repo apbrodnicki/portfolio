@@ -1,9 +1,27 @@
-import { Box, List, ListItem, ListItemText, Typography } from '@mui/material';
+import { Box, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import React from 'react';
+import { AiOutlineDotNet as DotNetIcon } from 'react-icons/ai';
+import { BiLogoTypescript as TypeScriptIcon } from 'react-icons/bi';
+import { FaAngular as AngularIcon, FaGitAlt as GitIcon, FaPhp as PhpIcon, FaReact as ReactIcon } from 'react-icons/fa';
+import { GrMysql as MySqlIcon } from 'react-icons/gr';
+import { RiJavascriptFill as JavaScriptIcon } from 'react-icons/ri';
+import { SiMongodb as MongoDbIcon } from 'react-icons/si';
+import { TbBrandCSharp as CSharpIcon } from 'react-icons/tb';
 import { DescriptionParagraph } from './DescriptionParagraph';
 
 export const About = (): React.JSX.Element => {
-	const skills: string[] = ['JavaScript', 'TypeScript', 'React', 'Angular', 'C#', '.NET', 'PHP', 'MySQL', 'MongoDB', 'Git'];
+	const skills = [
+		{ name: 'JavaScript', icon: <JavaScriptIcon size={36} /> },
+		{ name: 'TypeScript', icon: <TypeScriptIcon size={36} /> },
+		{ name: 'React', icon: <ReactIcon size={36} /> },
+		{ name: 'Angular', icon: <AngularIcon size={36} /> },
+		{ name: 'C#', icon: <CSharpIcon size={36} /> },
+		{ name: '.NET', icon: <DotNetIcon size={36} /> },
+		{ name: 'PHP', icon: <PhpIcon size={36} /> },
+		{ name: 'MySQL', icon: <MySqlIcon size={36} /> },
+		{ name: 'MongoDB', icon: <MongoDbIcon size={36} /> },
+		{ name: 'Git', icon: <GitIcon size={36} /> }
+	];
 
 	return (
 		<Box pt={5}>
@@ -15,7 +33,7 @@ export const About = (): React.JSX.Element => {
 			</Typography>
 			<DescriptionParagraph
 				text={
-					'Hi, my name is Alex and I\'m a passionate and motivated software engineer. I love working on web applications, it\'s a great joy of mine and the reason why I created this portfolio page. You can find some of the personal projects that I have built down below.'
+					'I\'m a passionate and motivated software engineer. I love working on web applications, it\'s a great joy of mine and the reason why I created this portfolio page. You can find some of the personal projects that I have built down below.'
 				}
 			/>
 			<DescriptionParagraph
@@ -30,14 +48,15 @@ export const About = (): React.JSX.Element => {
 					height: 'auto'
 				}}
 			>
-				{skills.map((skill: string, index: number) => (
+				{skills.map((skill, index: number) => (
 					<ListItem
 						key={index}
 						sx={{
 							width: '50%'
 						}}
 					>
-						<ListItemText primary={skill} primaryTypographyProps={{ color: 'primary' }} />
+						<ListItemIcon>{skill.icon}</ListItemIcon>
+						<ListItemText primary={skill.name} primaryTypographyProps={{ color: 'primary' }} />
 					</ListItem>
 				))}
 			</List>
