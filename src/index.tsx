@@ -34,7 +34,7 @@ try {
 			<ThemeProvider theme={theme}>
 				<App />
 			</ThemeProvider>
-		</React.StrictMode>,
+		</React.StrictMode>
 	);
 } catch (error) {
 	createRoot(rootElement).render(
@@ -42,6 +42,6 @@ try {
 			<ThemeProvider theme={theme}>
 				<ErrorPage error={error} />
 			</ThemeProvider>
-		</React.StrictMode>,
+		</React.StrictMode>
 	);
 }
