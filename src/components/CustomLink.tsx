@@ -17,13 +17,13 @@ export const CustomLink = ({ href, target, mx, children }: CustomLinkProps): Rea
 		sx={{
 			textDecoration: 'none',
 			'& :hover': {
-				color: '#8E8E8E'
+				color: '#4b46e9'
 			},
 			'& :focus': {
-				color: '#8E8E8E'
+				color: '#4b46e9'
 			},
 			'& :active': {
-				color: '#8E8E8E'
+				color: '#4b46e9'
 			}
 		}}>
 		{children}

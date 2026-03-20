@@ -20,10 +20,10 @@ export const Header = (): React.JSX.Element => (
 				</Typography>
 			</CustomLink>
 			<CustomLink href='https://github.com/apbrodnicki/' mx={1}>
-				<GitHubIcon fontSize='large' />
+				<GitHubIcon fontSize='large' color='primary' />
 			</CustomLink>
 			<CustomLink href='https://www.linkedin.com/in/alex-brodnicki/' mx={1}>
-				<LinkedInIcon fontSize='large' />
+				<LinkedInIcon fontSize='large' color='primary' />
 			</CustomLink>
 		</Toolbar>
 	</AppBar>
