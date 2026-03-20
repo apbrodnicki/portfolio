@@ -11,16 +11,16 @@ import { DescriptionParagraph } from './DescriptionParagraph';
 
 export const About = (): React.JSX.Element => {
 	const skills = [
-		{ name: 'JavaScript', icon: <JavaScriptIcon size={36} /> },
-		{ name: 'TypeScript', icon: <TypeScriptIcon size={36} /> },
-		{ name: 'React', icon: <ReactIcon size={36} /> },
-		{ name: 'Angular', icon: <AngularIcon size={36} /> },
-		{ name: 'C#', icon: <CSharpIcon size={36} /> },
-		{ name: '.NET', icon: <DotNetIcon size={36} /> },
-		{ name: 'PHP', icon: <PhpIcon size={36} /> },
-		{ name: 'MySQL', icon: <MySqlIcon size={36} /> },
-		{ name: 'MongoDB', icon: <MongoDbIcon size={36} /> },
-		{ name: 'Git', icon: <GitIcon size={36} /> }
+		{ name: 'JavaScript', icon: <JavaScriptIcon size={36} color='#f0dc54' /> },
+		{ name: 'TypeScript', icon: <TypeScriptIcon size={36} color='#2d79c7' /> },
+		{ name: 'React', icon: <ReactIcon size={36} color='#65dbfb' /> },
+		{ name: 'Angular', icon: <AngularIcon size={36} color='#dd0031' /> },
+		{ name: 'C#', icon: <CSharpIcon size={36} color='#9e549a' /> },
+		{ name: '.NET', icon: <DotNetIcon size={36} color='#5631d5' /> },
+		{ name: 'PHP', icon: <PhpIcon size={36} color='#7b7fb5' /> },
+		{ name: 'MySQL', icon: <MySqlIcon size={36} color='#09658d' /> },
+		{ name: 'MongoDB', icon: <MongoDbIcon size={36} color='#53ab46' /> },
+		{ name: 'Git', icon: <GitIcon size={36} color='#f05539' /> }
 	];
 
 	return (
@@ -38,7 +38,7 @@ export const About = (): React.JSX.Element => {
 			/>
 			<DescriptionParagraph
 				text={
-					'I\'ve been working in this field for over three years now and have garnered experience in a variety of technologies, including...'
+					'Over the course of my career I have have garnered experience in a variety of technologies, including but not limited to...'
 				}
 			/>
 			<List
@@ -60,9 +60,6 @@ export const About = (): React.JSX.Element => {
 					</ListItem>
 				))}
 			</List>
-			<DescriptionParagraph
-				text={'...among others.'}
-			/>
 		</Box>
 	);
 };
