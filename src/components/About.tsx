@@ -56,7 +56,14 @@ export const About = (): React.JSX.Element => {
 						}}
 					>
 						<ListItemIcon>{skill.icon}</ListItemIcon>
-						<ListItemText primary={skill.name} primaryTypographyProps={{ color: 'primary' }} />
+						<ListItemText
+							primary={skill.name}
+							slotProps={{
+								primary: {
+									color: 'primary'
+								}
+							}}
+						/>
 					</ListItem>
 				))}
 			</List>
